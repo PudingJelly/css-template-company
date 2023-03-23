@@ -7,14 +7,13 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
 button, input {
     outline: none;
     border: none;
     color: inherit;
 }
 
-/* common */
+/* common (공통) */
 .clearfix::after {
     content: '';
     display: block;
@@ -24,7 +23,6 @@ body {
     font-size: 14px;
     font-family: 'Noto Sans KR', sans-serif;
 }
-
 .en {
     font-family: 'Exo 2', sans-serif;
 }
@@ -32,8 +30,507 @@ br.mo {
     display: none;
 }
 
+/* header style */
+header {
+    background: rgba(0,0,0,0.2);
+    height: 100px;
+    line-height: 100px;
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+header .inner-header {
+    /* background: orange; */
+    width: 84%;
+    margin: 0 auto;
+}
+
+header .inner-header .logo {
+    /* background: skyblue; */
+    float: left;
+    width: 200px;
+}
+
+header .inner-header .logo img {
+    width: 100%; 
+    vertical-align: middle;
+    
+    border: 0.1px solid white;
+    border-radius: 15px;
+    opacity: 0.9;
+}
+
+header .inner-header .gnb {
+    /* background: violet; */
+    float: left;
+    margin-left: 80px;
+}
+
+header .inner-header .gnb li {
+    margin-right: 80px;
+}
+
+header .inner-header .gnb li a {
+    display: block;
+}
+
+header .inner-header .gnb li a:hover {
+    color: #ff8342;
+}
+
+/* nav 태그를 지목해서 gnb와 tnb의 글자를 한번에 지목 */
+header .inner-header nav li a {
+    font-size: 16px;
+    color: white;
+}
+
+header .inner-header .tnb {
+    /* background: greenyellow; */
+    float: right;
+}
+
+header .inner-header .tnb li {
+    margin-right: 25px;
+}
+
+header .inner-header .tnb li:first-child i,
+header .inner-header .tnb li:nth-child(2) i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+header .inner-header .tnb li:last-child a {
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 5px 15px;
+}
+
+header .inner-header .tnb li:last-child a:hover {
+    background: white;
+    color: #ff8342;
+}
+
+header .inner-header .tnb li:last-child i {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+header .inner-header nav li {
+    float: left;
+}
+
+header .inner-header .gnb-mobile {
+    display: none;
+}
+
+/* section.main style */
+
+section.main {
+    background: url(../img/vis_4.jpg)
+    no-repeat center / cover fixed;
+    height: 100vh;
+    position: relative;
+}
+
+section.main .main-title {
+    /* background: yellow; */
+
+    /* 박스 요소를 가운데로 위치하고 싶을 때 공식같은 디자인 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 10px #123;
+
+    animation: uprise 2s;
+}
+
+@keyframes uprise {
+    from {
+        opacity: 0;
+        top: 60%;
+    }
+    to {
+        opacity: 1;
+        top: 50%;
+    }
+}
+
+section.main h2 {
+    font-size: 55px;   
+}
+
+section.main .main-title p {
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+section.main .main-title .view {
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    display: block;
+    width: 180px;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    padding: 8px 0;
+
+    position: relative;
+    overflow: hidden;
+}
+
+section.main .main-title .view::after {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+section.main .main-title .view:hover::after {
+    width: 100%;
+}
+
+/* section에 들어갈 디자인을 일괄 지정 */
+section .title {
+    text-align: center;
+}
+
+section .title h2 {
+    font-size: 45px;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+section .title p {
+    font-size: 18px;
+    color: #555;
+}
+
+section .sub-container {
+    /* background: tomato; */
+    width: 74%;
+    margin: 0 auto;
+}
 
 
+/* section.about style */
+section.about {
+    /* background: orange; */
+    margin: 80px 0;
+}
 
+section.about .sub-container {
+    /* background: skyblue; */
+    margin-top: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+}
 
+section.about .sub-container li {
+    box-sizing: border-box;
+    float: left;
+    width: 33.3333%;
+    height: 510px;
+}
 
+section.about .sub-container li .img-box {
+    overflow: hidden; /* 부모요소를 넘치는 요소 숨김처리(자기 공간 안에서만 작동하도록) */
+}
+
+section.about .sub-container li .img-box  img {
+    width: 100%;
+}
+
+section.about .sub-container li a:hover .img-box img {
+    transform: scale(1.2);
+    transition: 0.6s;
+}
+
+section.about ul li a .text {
+    padding: 25px;
+}
+
+section.about ul li a .text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+section.about ul li a .text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+section.about ul li a .text p.more {
+    /* 일괄 대소문자 변경 */
+    /* text-transform: lowercase; */
+    text-transform: uppercase;
+    font-weight: bold; 
+    /* background: skyblue; */
+    padding-left: 40px;
+    position: relative;
+}
+
+section.about ul li a .text p.more::before {
+    content: '→';
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #ff8342;
+
+    position: absolute;
+    top: -7px;
+    left: 0;
+}
+
+/* section.innovation style */
+section.innovation {
+    margin-bottom: 150px;
+}
+
+section.innovation .img-box {
+    margin-top: 50px;
+    height: 540px;
+    background: url(../img/product_1.jpg) no-repeat center / cover;
+    
+    position: relative;
+}
+
+section.innovation .img-box .inner {
+    background: #3a3c4e;
+    width: 80%;
+    color: white;
+    
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, 0);
+}
+
+section.innovation .img-box .inner h3 {
+    background: white;
+    color: #222;
+    font-size: 18px;
+    padding: 25px 45px;
+    box-sizing: border-box;
+}
+
+section.innovation .img-box .inner .bottom {
+    padding: 35px 80px;
+    box-sizing: border-box;
+}
+
+section.innovation .img-box .inner .bottom p {
+    float: left;
+    width: 70%;
+    line-height: 1.6;
+    /* background: yellow; */
+}
+
+section.innovation .img-box .inner .bottom a {
+    /* display: block; - float을 사용하면 디스플레이가 자동으로 블록으로 변경됨 (float 사용 시 생략 가능)  */
+    float: right;
+    /* background: aqua; */
+    padding: 7px 30px;
+    border-radius: 50px;
+    background: orange;
+}
+
+section.innovation .img-box .inner .bottom a:hover {
+    background: #f86010;
+}
+
+/* section.me style */
+section.me {
+    background: url(../img/me.jpg) no-repeat center / cover;
+    padding: 80px 0;
+    margin-bottom: 150px;
+}
+
+section.me ul.list {
+    margin-top: 50px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+section.me ul.list > li {
+    /* border: 4px solid #000; */
+    padding: 30px 60px;
+}
+
+section.me ul.list > li:first-child {
+    border-bottom: 1px solid #ddd;
+}
+
+section.me ul.list > li h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section.me ul.list > li h3 span {
+    position: absolute;
+    left: -30px;
+    color: #ff8342;
+}
+
+section.me ul.list > li p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+section.me ul.list > li .more {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+section.me ul.list > li .more span {
+    color: #ff8342;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+section.me ul.list ul.in {
+    margin-bottom: 30px;
+}
+
+section.me ul.list ul.in li em {
+    /* float 또는 position이 적용되면 자동으로 블록요소로 바뀜 */
+    float: left;
+    font-weight: 700;
+    width: 12%;
+}
+
+section.me ul.list ul.in li p {
+    float: left;
+    position: relative;
+}
+
+section.me ul.list ul.in li p::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #925656;
+    position: absolute;
+    left: -35px;
+    top: 8px;
+}
+
+#incruit-btn {
+    display: block;
+    width: 280px;
+    background: #ff8342;
+    color: #fff;
+    margin: 50px auto 0;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+/* section.sns style */
+section.sns {
+    margin: 80px 0;
+}
+
+section.sns .title {
+    margin-bottom: 50px;
+}
+
+section.sns .sub-container { 
+    margin-top: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+}
+
+section.sns .sub-container li {
+    box-sizing: border-box;
+    float: left;
+    width: 30%;
+    height: 510px;
+    margin-right: 20px ;
+
+}
+
+section.sns .sub-container .img-box {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+section.sns .sub-container .img-box::after {
+    content: 'BLOG';
+    color: white;
+    padding: 10px 30px;
+    border: 1px solid white;
+    border-radius: 30px;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.sns .sub-container .img-box:hover::after {
+    opacity: 1;
+}
+
+section.sns .sub-container .img-box::before {
+    width: 0;
+    height: 100%;
+    background: rgba(241, 109, 21, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    content: '';
+    color: white;
+}
+
+section.sns .sub-container li .img-box:hover::before {
+    position: 50%;
+    width: 100%;
+}
+
+section.sns .sub-container li .img-box img {
+    width: 100%;
+ 
+}
+
+section.sns .sub-container li .bottom {
+    margin-top: 30px;
+}
+
+section.sns .sub-container li .color {
+    font-size: 20px;
+    color: orange;
+    margin-bottom: 20px;
+}
+
+section.sns .sub-container li p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+section.sns .sub-container li .time {
+    font-size: 15px;
+    color: gray;
+}
+
+section.sns .sub-container li i {
+    margin-right: 10px;
+}
